@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  padding-bottom: 0px;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --background-color: #1c1e21;
+  --white: #ffffff;
+  --tw-color1: #a855f7;
+  --tw-color1-hover: #9333ea;
+}
+
+body {
+  background: var(--background-color);
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  display: flex;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+
+.btn {
+  color: rgb(0, 0, 0);
+  background-color: rgb(250, 252, 252);
+  display: relative;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 75px;
+  width: 200px;
+  font-size: 20px;
+  font-style: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5%;
+  border-color: rgb(55, 0, 255);
+  border-width: 2px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: rgb(5, 5, 5);
+  background-color: rgb(2, 253, 86);
+  cursor: pointer;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0rem;
+  background-color: #0f0c0c;
+  text-align: center;
+  position: absolute;
+  margin: 0px;
+}
+
+a {
+  color: rgb(5, 216, 16);
+}
+
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.sec {
+  height: 120px;
+  width: 100%;
+  overflow-x: 0px;
+}

@@ -25,7 +25,7 @@ const Home: NextPage = () => {
   const isConnected = !!wallet;
   
   const { program, isLoading } = useProgram(
-    "GYxxSZGK7xNExxQxxxDTjGpSzxBFQfDW78xxBWxxx79i",
+    "xxxxxZv1Ncxxxxxxxxxxxxxxv9hvrttNQixxxxxx",
     "nft-drop"
   );
 
@@ -46,13 +46,24 @@ const Home: NextPage = () => {
         </div>
         <h1 className={styles.h1}>Solana, meet Bankkroll 👋</h1>
         <p className={styles.explain}>
-          Here we will create your simple mint dapp using a react app.
+          Here is where will create your simple mint dapp to you liking.
         </p>
+        
 
         {isConnected && (
           <div>
             <div>
-            <button className="btn" onClick={() => claim.mutate({ amount: 1 })}>
+            <button className="btn btn-5" onClick={() => claim.mutate({ amount: 1 },
+              {
+                onSuccess: (Success) => {
+                  console.log(Success);
+                  swal('Mint Successful','You minted 1 NFT!','success');
+                },
+                onError: (Error) => {
+                  console.error(Error);
+                  swal("Oops!", "Something went wrong!", "error");
+                },
+              })}>
             {claim.isLoading
               ? "Claiming....."
               : claim.isSuccess
@@ -63,7 +74,7 @@ const Home: NextPage = () => {
         )}
         
         
-<div className="sec"></div>
+        <div className="sec"></div>
 
         <WalletMultiButton />
 
@@ -78,7 +89,7 @@ const Home: NextPage = () => {
         </div>
         
 
-        <div className={styles.h1}> 
+        <div> 
           <h5 className="footer">
             Developed with ❤️‍🔥 by: <a href="https://twitter.com/bankkroll_eth">
               Bankkroll</a>
@@ -93,3 +104,4 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+

@@ -5,6 +5,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 
 /* Set core body defaults */
@@ -24,10 +25,10 @@ select {
 }
 
 :root {
-  --background-color: #1c1e21;
-  --white: #ffffff;
-  --tw-color1: #a855f7;
-  --tw-color1-hover: #9333ea;
+  --background-color: #0365f8;
+  --white: #fcfafa;
+  --tw-color1: #0ea8f0;
+  --tw-color1-hover: #000000;
 }
 
 body {
@@ -37,6 +38,8 @@ body {
   display: flex;
   margin: 0;
   text-align: center;
+  cursor: crosshair;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -45,39 +48,42 @@ h2 {
 
 
 .btn {
-  color: rgb(0, 0, 0);
-  background-color: rgb(250, 252, 252);
-  display: relative;
-  margin-bottom: 20px;
+  flex: 1 1 auto;
+  font-size: 25px;
+  margin: 10px;
+  padding: 10px;
+  width: 160px;
   text-align: center;
-  height: 75px;
-  width: 200px;
-  font-size: 20px;
-  font-style: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(7, 6, 6);
+  box-shadow: 0 0 20px rgb(34, 34, 34);
+  border-radius: 10px;
   cursor: pointer;
-  text-decoration: none;
-  border-radius: 5%;
-  border-color: rgb(55, 0, 255);
-  border-width: 2px;
-  font-weight: bold;
-}
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+ }
 
 .btn:hover {
-  color: rgb(5, 5, 5);
-  background-color: rgb(2, 253, 86);
-  cursor: pointer;
+  background-position: right center; 
+}
+
+.btn-5 {
+  background-image: linear-gradient(to right, 
+  #cd6ef8 0%, rgb(214, 109, 255) 25%, #02fc17 100%);
 }
 
 .footer {
-  position: absolute;
+  position: relative;
+  width: 100%;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0rem;
-  background-color: #0f0c0c;
   text-align: center;
-  position: absolute;
-  margin: 0px;
+  margin-top: 140px;
+  
 }
 
 a {
@@ -111,3 +117,16 @@ a {
   width: 100%;
   overflow-x: 0px;
 }
+
+.wallet-adapter-button.wallet-adapter-button-trigger {
+  color: rgb(5, 5, 5);
+  background-color: #09eafa;
+}
+
+.wallet-adapter-button-trigger:hover {
+  color: rgb(4, 252, 16);
+  background-color: #f6f5f7;
+}
+
+
+

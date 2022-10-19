@@ -12,7 +12,7 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 
 export default function NFTDrop() {
   const wallet = useWallet();
-  const { program, isLoading } = useProgram("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","nft-drop");
+  const { program, isLoading } = useProgram("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","nft-drop");
   const claim = useClaimNFT(program);
 
   return (

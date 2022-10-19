@@ -6,13 +6,12 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana";
 import { useState } from "react";
 import swal from 'sweetalert';
-import Head from 'next/head'
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 export default function NFTDrop() {
   const wallet = useWallet();
-  const { program, isLoading } = useProgram("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","nft-drop");
+  const { program, isLoading } = useProgram("54eLZv1NcSzRzBTJJ3JFkiREKRK6v9hvrttNQi9CmEG","nft-drop");
   const claim = useClaimNFT(program);
 
   return (
@@ -80,7 +79,6 @@ export default function NFTDrop() {
           </h5>
         </div>
     </div>
-    
   );
 }
 

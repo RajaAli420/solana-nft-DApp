@@ -6,6 +6,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana";
 import { useState } from "react";
 import swal from 'sweetalert';
+import Head from 'next/head'
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -26,8 +27,12 @@ export default function NFTDrop() {
           />
         </div>
         <h1 className={styles.h1}>Solana, meet Bankkroll 👋</h1>
+        <div className={styles.explain}> Need a solana mint DApp? Contact me here → <a href="https://twitter.com/bankkroll_eth">
+              Bankkroll</a> </div>
+              <div className={styles.explain}> Wanna check out more of my services and projects? → <a href="https://bankkroll.xyz">
+              bankkroll.xyz</a> </div>
         <p className={styles.explain}>
-          Here is where will create your simple mint dapp to you liking.
+          This page is where will create your simple mint dapp to you liking.
         </p>
         
 
@@ -58,8 +63,15 @@ export default function NFTDrop() {
           <WalletMultiButton />
         )}
         
+        <div className={styles.container}>
         
-        <div className="sec"></div>
+        <div className="nbtn">
+        <p>
+          THIS IS A DEVNET TEST SITE!
+        </p>
+        <div className="nbtn2"></div>
+        </div>
+        </div>
 
         <div className="Home_iconContainer1">
           <Image
@@ -81,4 +93,3 @@ export default function NFTDrop() {
     </div>
   );
 }
-

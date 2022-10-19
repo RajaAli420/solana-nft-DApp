@@ -6,39 +6,21 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana";
 import { useState } from "react";
 import swal from 'sweetalert';
-
+import Head from 'next/head'
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-const Home: NextPage = () => {
-  // Here's how to get the thirdweb SDK instance
-  // const sdk = useSDK();
-  // Here's how to get a nft collection
-  // const { program } = useProgram(
-  //   your_nft_collection_address,
-  //   "nft-collection"
-  // );
-
-  
-
-  const wallet = useWallet().publicKey;
-  const isConnected = !!wallet;
-  
-  const { program, isLoading } = useProgram(
-    "xxxxxZv1Ncxxxxxxxxxxxxxxv9hvrttNQixxxxxx",
-    "nft-drop"
-  );
-
-
+export default function NFTDrop() {
+  const wallet = useWallet();
+  const { program, isLoading } = useProgram("54eLZv1NcSzRzBTJJ3JFkiREKRK6v9hvrttNQi9CmEG","nft-drop");
   const claim = useClaimNFT(program);
 
   return (
-    <>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
           <Image
             src="/3.png"
-            height={240}
+            height={200}
             width={200}
             objectFit="contain"
             alt="BR Labs"
@@ -50,35 +32,37 @@ const Home: NextPage = () => {
         </p>
         
 
-        {isConnected && (
-          <div>
-            <div>
-            <button className="btn btn-5" onClick={() => claim.mutate({ amount: 1 },
-              {
-                onSuccess: (Success) => {
-                  console.log(Success);
-                  swal('Mint Successful','You minted 1 NFT!','success');
-                },
-                onError: (Error) => {
-                  console.error(Error);
-                  swal("Oops!", "Something went wrong!", "error");
-                },
-              })}>
+        {wallet.connected ? (
+          <button className="btn btn-5" onClick={() =>
+              claim.mutate(
+                { amount: 1 },
+                {
+                    onSuccess: (Success) => {
+                      console.log(Success);
+                      swal('Mint Successful','You minted 1 NFT!','success');
+                    },
+                  onError: (error) => {
+                    console.error(error);
+                    swal("Oops!", "Something went wrong!", "error");
+                  },
+                }
+              )
+            }
+          >
             {claim.isLoading
               ? "Claiming....."
               : claim.isSuccess
               ? "Success Minting!"
-              : "Mint NFT 0.8 SOL"}</button>
-            </div>
-          </div>
+              : "Mint NFT 0.8 SOL"}
+          </button>
+        ) : (
+          <WalletMultiButton />
         )}
         
         
         <div className="sec"></div>
 
-        <WalletMultiButton />
-
-        <div className={styles.iconContainer}>
+        <div className="Home_iconContainer1">
           <Image
             src="/sol.png"
             height={40}
@@ -87,9 +71,7 @@ const Home: NextPage = () => {
             alt="SOLANA"
           />
         </div>
-        
-
-        <div> 
+      <div> 
           <h5 className="footer">
             Developed with ❤️‍🔥 by: <a href="https://twitter.com/bankkroll_eth">
               Bankkroll</a>
@@ -97,11 +79,8 @@ const Home: NextPage = () => {
               BR Labs</a>
           </h5>
         </div>
-      </div>
-  
-    </>
+    </div>
+    
   );
-};
-
-export default Home;
+}
 

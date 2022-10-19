@@ -31,6 +31,7 @@ select {
   --tw-color1-hover: #000000;
 }
 
+
 body {
   background: var(--background-color);
   font-family: "Inter", sans-serif;
@@ -38,7 +39,7 @@ body {
   display: flex;
   margin: 0;
   text-align: center;
-  cursor: crosshair;
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/cyberpunk/cyberpunk-cursor-32x32.png), default!important;
   overflow-x: hidden;
 }
 
@@ -46,7 +47,10 @@ h2 {
   font-size: 2rem;
 }
 
+.swal-button {
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/cyberpunk/cyberpunk-pointer-32x32.png), pointer!important;
 
+}
 .btn {
   flex: 1 1 auto;
   font-size: 25px;
@@ -59,7 +63,7 @@ h2 {
   color: rgb(7, 6, 6);
   box-shadow: 0 0 20px rgb(34, 34, 34);
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/cyberpunk/cyberpunk-pointer-32x32.png), pointer!important;
   overflow-x: hidden;
   overflow-y: hidden;
 
@@ -71,7 +75,7 @@ h2 {
 
 .btn-5 {
   background-image: linear-gradient(to right, 
-  #cd6ef8 0%, rgb(214, 109, 255) 25%, #02fc17 100%);
+  #cd6ef8 0%, rgb(214, 109, 255) 25%, #02fc17 100%, rgb(3, 248, 3) 100%);
 }
 
 .footer {
@@ -82,12 +86,13 @@ h2 {
   left: 0;
   padding: 0rem;
   text-align: center;
-  margin-top: 140px;
-  
+  margin-top: 0px;
 }
 
 a {
   color: rgb(5, 216, 16);
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/cyberpunk/cyberpunk-pointer-32x32.png), pointer!important;
+
 }
 
 
@@ -104,7 +109,7 @@ a {
   float: right;
   font-size: 22px;
   line-height: 20px;
-  cursor: pointer;
+  cursor: url(https://sweezy-cursors.com/wp-content/uploads/cursor/cyberpunk/cyberpunk-pointer-32x32.png), pointer!important;
   transition: 0.3s;
 }
 
@@ -129,4 +134,10 @@ a {
 }
 
 
+img {
+  border-radius: 28%;
+}
 
+.Home_iconContainer1 {
+  margin-top: 200px;
+}

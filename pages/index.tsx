@@ -7,11 +7,17 @@ import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana";
 import { useState } from "react";
 import swal from 'sweetalert';
 import Head from 'next/head'
+
+import * as whitelist from '../whitelist';
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
-
+let isAllowed=false;
 export default function NFTDrop() {
   const wallet = useWallet();
+  let found = whitelist.findIndex(whitelist => whitelist == wallet.publicKey?.toBase58());
+  if (found != -1) {
+    isAllowed = true;
+  }
   const { program, isLoading } = useProgram("54eLZv1NcSzRzBTJJ3JFkiREKRK6v9hvrttNQi9CmEG","nft-drop");
   const claim = useClaimNFT(program);
 
@@ -36,7 +42,7 @@ export default function NFTDrop() {
         </p>
         
 
-        {wallet.connected ? (
+        {wallet.connected && isAllowed ? (
           <button className="btn btn-5" onClick={() =>
               claim.mutate(
                 { amount: 1 },
@@ -60,7 +66,8 @@ export default function NFTDrop() {
               : "Mint NFT 0.8 SOL"}
           </button>
         ) : (
-          <WalletMultiButton />
+          // <WalletMultiButton />
+          null
         )}
         
         <div className={styles.container}>
